@@ -1,1 +1,2 @@
-# Crop-Prediction-using-Machine-Learning
+This project aims to recommend the most suitable crop for cultivation based on soil and environmental parameters like nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall. I implemented and compared four machine learning algorithms — Decision Tree, Naive Bayes, Ada Boost, and Voting Classifier — to evaluate performance based on accuracy, precision, recall and F1 scores. The best-performing model - Decision Tree - was selected and deployed. A simple and user-friendly web interface was created using Flask to allow users to input their data and receive real-time crop recommendations.
+
