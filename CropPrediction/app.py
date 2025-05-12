@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import joblib
 
 app = Flask(__name__)
-model = joblib.load('dt.pkl')  # Load the trained model
+model = joblib.load('dt.pkl')  # Load the decision tree model
 
 # Label map for prediction
 label_map = {
