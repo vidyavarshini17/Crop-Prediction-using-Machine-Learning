@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Find Your Crop</h1>
+    </div>
+
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <div class="form-row">
+                <div class="form-col">
+                    <label>NITROGEN</label>
+                    <input type="number" step="0.01" name="nitrogen" placeholder="NITROGEN" required value="{{ nitrogen }}">
+
+                    <label>PHOSPHORUS</label>
+                    <input type="number" step="0.01" name="phosphorus" placeholder="PHOSPHORUS" required value="{{ phosphorus }}">
+
+                    <label>POTASSIUM</label>
+                    <input type="number" step="0.01" name="potassium" placeholder="POTASSIUM" required value="{{ potassium }}">
+
+                    <label>TEMPERATURE</label>
+                    <input type="number" step="0.01" name="temperature" placeholder="TEMPERATURE" required value="{{ temperature }}">
+                </div>
+
+                <div class="form-col">
+                    <label>HUMIDITY</label>
+                    <input type="number" step="0.01" name="humidity" placeholder="HUMIDITY" required value="{{ humidity }}">
+
+                    <label>PH VALUE</label>
+                    <input type="number" step="0.01" name="ph" placeholder="PH VALUE" required value="{{ ph }}">
+
+                    <label>RAINFALL</label>
+                    <input type="number" step="0.01" name="rainfall" placeholder="RAINFALL" required value="{{ rainfall }}">
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button type="submit" class="predict-btn">Predict</button>
+                <a href="/" class="predict-btn refresh-btn">Refresh</a>
+            </div>
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+    
+    <footer class="footer">
+        © 2025 Crop Predictor | Built by A S Vidya Varshini
+    </footer>
+</body>
+</html>
